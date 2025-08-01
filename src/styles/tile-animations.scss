@@ -1,0 +1,36 @@
+.tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-field {
+  position: relative;
+}
+
+/* Animation for merged tiles */
+@keyframes tile-scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.tile-merged {
+  animation: tileScale 0.2s ease;
+}
+
+/* Animation for new tiles */
+@keyframes tile-appear {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.tile-new {
+  animation: tile-appear 0.2s ease;
+}
