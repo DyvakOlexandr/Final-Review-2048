@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * This class represents the game.
@@ -18,11 +18,11 @@ class Game {
     this.initialState = initialState.map((row) => [...row]);
     this.grid = initialState.map((row) => [...row]);
     this.score = 0;
-    this.status = 'idle';
+    this.status = "idle";
   }
 
   moveLeft() {
-    if (this.status !== 'playing') {
+    if (this.status !== "playing") {
       return;
     }
 
@@ -33,7 +33,7 @@ class Game {
   }
 
   moveRight() {
-    if (this.status !== 'playing') {
+    if (this.status !== "playing") {
       return;
     }
 
@@ -74,7 +74,7 @@ class Game {
   }
 
   moveUp() {
-    if (this.status !== 'playing') {
+    if (this.status !== "playing") {
       return;
     }
 
@@ -87,7 +87,7 @@ class Game {
   }
 
   moveDown() {
-    if (this.status !== 'playing') {
+    if (this.status !== "playing") {
       return;
     }
 
@@ -116,11 +116,11 @@ class Game {
   }
 
   start() {
-    if (this.status !== 'idle') {
+    if (this.status !== "idle") {
       return;
     }
 
-    this.status = 'playing';
+    this.status = "playing";
     this._addRandomCell();
     this._addRandomCell();
   }
@@ -128,7 +128,7 @@ class Game {
   restart() {
     this.score = 0;
     this.grid = this.initialState.map((row) => [...row]);
-    this.status = 'idle';
+    this.status = "idle";
   }
 
   _slideAndMerge(row) {
@@ -173,7 +173,8 @@ class Game {
       for (let col = 0; col < this.grid[row].length; col++) {
         if (this.grid[row][col] === 0) {
           emptyCells.push({
-            row, col,
+            row,
+            col,
           });
         }
       }
@@ -196,9 +197,9 @@ class Game {
       }
 
       if (this._checkWin()) {
-        this.status = 'win';
+        this.status = "win";
       } else if (!this._hasAvailableMoves()) {
-        this.status = 'lose';
+        this.status = "lose";
       }
     }
   }

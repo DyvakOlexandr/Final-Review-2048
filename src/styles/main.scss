@@ -5,7 +5,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             justify-content: center;
@@ -127,6 +127,7 @@
             position: relative;
             transition: all 0.3s ease;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
 
              &--2 {
               background: linear-gradient(135deg, #eee4da, #ede0c8);
@@ -188,7 +189,6 @@
             animation: tile2048Glow 2s ease-in-out infinite alternate;
         }
       }
-
    @keyframes pop {
   0% { transform: scale(0); }
   100% { transform: scale(1); }
@@ -207,7 +207,6 @@
 .field-cell--merged {
   animation: merge 0.2s ease;
 }
-
         .message-container {
             margin-top: 30px;
             min-height: 70px;
@@ -309,3 +308,20 @@
                 height: 55px;
             }
           }
+.tile-moving {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #776e65;
+    background: linear-gradient(135deg, #eee4da, #ede0c8);
+      transition: transform 300ms ease-in-out;
+    border-radius: 10px;
+    z-index: 0;
+      pointer-events: none;
+    /* Тут можуть бути інші стилі, що відповідають вашим field-cell */
+
+
+}
+
